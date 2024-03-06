@@ -2,7 +2,7 @@
 export default function Authors() {
   return (
     <div>
-      <div>ini halam All Authors</div>
+      <div className="text-4xl">Author List</div>
     </div>
   );
 }

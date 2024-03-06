@@ -2,7 +2,7 @@
 export default function Books() {
   return (
     <div>
-      <div>ini halam All Books</div>
+      <div className="text-4xl">All Books List</div>
     </div>
   );
 }

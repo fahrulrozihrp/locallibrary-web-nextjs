@@ -2,7 +2,7 @@
 export default function Bookinstances() {
   return (
     <div>
-      <div>ini halaman All Bookinstances</div>
+      <div className="text-4xl">Book Instance List</div>
     </div>
   );
 }

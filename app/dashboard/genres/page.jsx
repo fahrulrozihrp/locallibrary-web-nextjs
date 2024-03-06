@@ -2,7 +2,7 @@
 export default function Genres() {
   return (
     <div>
-      <div>ini halam All Genres</div>
+      <div className="text-4xl">Genre List</div>
     </div>
   );
 }

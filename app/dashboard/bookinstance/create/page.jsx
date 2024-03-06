@@ -2,7 +2,7 @@
 export default function BookinstanceCreate() {
   return (
     <div>
-      <div>ini halaman Create bookinstance</div>
+      <div className="text-4xl">Create Book Instance</div>
     </div>
   );
 }
