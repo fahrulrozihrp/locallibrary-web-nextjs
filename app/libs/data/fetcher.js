@@ -1,7 +1,6 @@
-export async function fetchAllBook() {
+const Fetcher = async (url) => {
   try {
-    const res = await fetch("http://localhost:3000/api/bookapi", {
-      method: "GET",
+    const res = await fetch(url, {
       cache: "no-store",
     });
 
@@ -12,4 +11,6 @@ export async function fetchAllBook() {
   } catch (error) {
     console.log(error);
   }
-}
+};
+
+export default Fetcher;

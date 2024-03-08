@@ -1,7 +1,8 @@
-import { fetchAllAuthors } from "@/app/libs/data/authorsdata";
+// import { fetchAllAuthors } from "@/app/libs/data/authorsdata";
+import Fetcher from "@/app/libs/data/fetcher";
 
 export default async function Authors() {
-  const data = await fetchAllAuthors();
+  const data = await Fetcher("http://localhost:3000/api/authorapi");
 
   if (!data?.allAuthors) {
     return <p>No Authors.</p>;
@@ -15,7 +16,9 @@ export default async function Authors() {
       {authors?.map((item) => {
         return (
           <div key={item._id}>
-            <div className="text-black text-xl">{item?.first_name}</div>
+            <div className="text-black text-xl">
+              {item?.first_name} {item?.family_name}
+            </div>
           </div>
         );
       })}

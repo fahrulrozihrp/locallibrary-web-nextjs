@@ -28,7 +28,7 @@ export default function AuthorCreate() {
           className="p-2 border mt-2 mb-5 border-gray-500 w-[100%] md:w-[100%]"
         />
 
-        <label htmlFor="date_of_death">Family Name:</label>
+        <label htmlFor="date_of_death">Date of death:</label>
         <br />
         <input
           type="date"

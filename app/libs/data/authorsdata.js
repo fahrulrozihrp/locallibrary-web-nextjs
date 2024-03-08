@@ -1,12 +1,7 @@
-export async function fetchAllAuthors() {
-  try {
-    const res = await fetch("http://localhost:3000/api/authorapi");
+// import Fetcher from "./fetcher";
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-    return res.json();
-  } catch (error) {
-    console.log(error);
-  }
-}
+// const authorapiurl = "http://localhost:3000/api/bookapi";
+
+// export async function fetchAllAuthors() {
+//   Fetcher(authorapiurl);
+// }
