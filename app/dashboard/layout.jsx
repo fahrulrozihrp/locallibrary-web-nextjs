@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import Sidenav from "../component/dashboard/sidenav";
 import { Bars2Icon } from "@heroicons/react/24/outline";
+import { Loading } from "../component/loading";
 
 export default function Layout({ children }) {
   return (
@@ -10,7 +12,7 @@ export default function Layout({ children }) {
         </div>
 
         <div className="flex-grow px-4 pt-20 md:overflow-y-auto md:pt-6">
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </div>
       </main>
     </>
