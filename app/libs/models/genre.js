@@ -8,7 +8,7 @@ const GenreSchema = new Schema({
 });
 
 GenreSchema.virtual("url").get(function () {
-  return `/catalog/genre/${this._id}`;
+  return `/dashboard/genre/${this._id}`;
 });
 
 const Genre = mongoose.models.Genre || mongoose.model("Genre", GenreSchema);

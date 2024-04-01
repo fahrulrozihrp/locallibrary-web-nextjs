@@ -88,3 +88,31 @@ export async function fetchDetails() {
     throw new Error("Failed to fetch!");
   }
 }
+
+export async function fetchBookId(id) {
+  try {
+    await connectMongoDB();
+    const [book, bookInstances] = await Promise.all([
+      Book.findById(id).populate("author").populate("genre").exec(),
+      BookInstance.find({ book: id }).exec(),
+    ]);
+    return [book, bookInstances];
+  } catch (error) {
+    console.log(err);
+    throw new Error("Failed to fetch!");
+  }
+}
+
+export async function fetchAuthorId(id) {
+  try {
+    await connectMongoDB();
+    const [author, allBooksByAuthor] = await Promise.all([
+      Author.findById(id).exec(),
+      Book.find({ author: id }, "title summary").exec(),
+    ]);
+    return [author, allBooksByAuthor];
+  } catch (error) {
+    console.log(err);
+    throw new Error("Failed to fetch!");
+  }
+}

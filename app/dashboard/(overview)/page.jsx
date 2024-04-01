@@ -17,6 +17,7 @@ export default async function Page() {
         Welcome to Local Library, A website inspired by{" "}
         <a
           href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs"
+          target="_blank"
           className="text-blue-500"
         >
           MDN Tutorials
