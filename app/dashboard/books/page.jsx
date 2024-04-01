@@ -16,7 +16,9 @@ export default async function Books() {
       {books.map((item) => {
         return (
           <div key={item._id}>
-            <div className="text-black text-xl">{item.title}</div>
+            <div className="text-black text-xl">
+              <li>{item.title}</li>
+            </div>
           </div>
         );
       })}

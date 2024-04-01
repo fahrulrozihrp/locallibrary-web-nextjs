@@ -3,10 +3,12 @@ import Book from "@/app/libs/models/book";
 import Author from "@/app/libs/models/author";
 import Genre from "@/app/libs/models/genre";
 import BookInstance from "@/app/libs/models/bookinstance";
+import { unstable_noStore as noStore } from "next/cache";
 
 export async function fetchGenre() {
+  noStore();
   try {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
 
     await connectMongoDB();
     const allGenre = await Genre.find().sort({ name: 1 }).exec();
@@ -18,6 +20,7 @@ export async function fetchGenre() {
 }
 
 export async function fetchAuthor() {
+  noStore();
   try {
     await connectMongoDB();
     const allAuthors = await Author.find().sort({ family_name: 1 }).exec();
@@ -29,6 +32,7 @@ export async function fetchAuthor() {
 }
 
 export async function fetchBook() {
+  noStore();
   try {
     await connectMongoDB();
     const books = await Book.find({}, "title author")
@@ -43,6 +47,7 @@ export async function fetchBook() {
 }
 
 export async function fetchBookInstance() {
+  noStore();
   try {
     await connectMongoDB();
     const allBookInstances = await BookInstance.find().populate("book").exec();
@@ -54,7 +59,9 @@ export async function fetchBookInstance() {
 }
 
 export async function fetchDetails() {
+  noStore();
   try {
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
     await connectMongoDB();
     const [
       numBooks,

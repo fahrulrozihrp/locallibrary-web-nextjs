@@ -19,7 +19,9 @@ export default async function Authors() {
         return (
           <div key={item._id}>
             <div className="text-black text-xl">
-              {item.first_name} {item.family_name}
+              <li>
+                {item.first_name} {item.family_name}
+              </li>
             </div>
           </div>
         );

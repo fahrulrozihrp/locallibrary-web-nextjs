@@ -31,7 +31,11 @@ export default async function Genres() {
     <div>
       <div className="text-4xl">Genre List</div>
       {allGenre.map((item) => {
-        return <div key={item._id}>{item.name}</div>;
+        return (
+          <div className="text-black text-xl" key={item._id}>
+            <li>{item.name}</li>
+          </div>
+        );
       })}
     </div>
   );

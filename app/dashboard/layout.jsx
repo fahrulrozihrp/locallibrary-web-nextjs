@@ -12,7 +12,7 @@ export default function Layout({ children }) {
         </div>
 
         <div className="flex-grow px-4 pt-20 md:overflow-y-auto md:pt-6">
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          {children}
         </div>
       </main>
     </>
